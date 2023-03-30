@@ -31,7 +31,7 @@ public class PrincipalVIEW extends javax.swing.JFrame {
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         menuCadastro = new javax.swing.JMenu();
-        itemMenuCliente = new javax.swing.JMenuItem();
+        itemMenuSecretaria = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,14 +44,14 @@ public class PrincipalVIEW extends javax.swing.JFrame {
             }
         });
 
-        itemMenuCliente.setMnemonic('o');
-        itemMenuCliente.setText("Cliente");
-        itemMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+        itemMenuSecretaria.setMnemonic('o');
+        itemMenuSecretaria.setText("Secretaria");
+        itemMenuSecretaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemMenuClienteActionPerformed(evt);
+                itemMenuSecretariaActionPerformed(evt);
             }
         });
-        menuCadastro.add(itemMenuCliente);
+        menuCadastro.add(itemMenuSecretaria);
 
         menuBar.add(menuCadastro);
 
@@ -80,9 +80,9 @@ public class PrincipalVIEW extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void itemMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuClienteActionPerformed
+    private void itemMenuSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuSecretariaActionPerformed
        abreClienteVIEW();
-    }//GEN-LAST:event_itemMenuClienteActionPerformed
+    }//GEN-LAST:event_itemMenuSecretariaActionPerformed
 
     private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
         sair();
@@ -104,7 +104,7 @@ public class PrincipalVIEW extends javax.swing.JFrame {
     }
 
     private void abreClienteVIEW(){
-         ClienteVIEW clienteVIEW = new ClienteVIEW();
+         AlunoVIEW clienteVIEW = new AlunoVIEW();
         this.desktopPane.add(clienteVIEW);
         clienteVIEW.setVisible(true);
         clienteVIEW.setPosicao();
@@ -144,7 +144,7 @@ public class PrincipalVIEW extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenuItem itemMenuCliente;
+    private javax.swing.JMenuItem itemMenuSecretaria;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenu menuSair;
