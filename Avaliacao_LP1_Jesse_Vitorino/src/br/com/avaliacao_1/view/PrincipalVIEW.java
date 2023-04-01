@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
  */
-package br.com.projeto_1.view;
+package br.com.avaliacao_1.view;
 
 import javax.swing.JOptionPane;
 
@@ -81,7 +81,7 @@ public class PrincipalVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemMenuSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuSecretariaActionPerformed
-       abreClienteVIEW();
+       abreAlunoVIEW();
     }//GEN-LAST:event_itemMenuSecretariaActionPerformed
 
     private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
@@ -103,11 +103,11 @@ public class PrincipalVIEW extends javax.swing.JFrame {
         }
     }
 
-    private void abreClienteVIEW(){
-         AlunoVIEW clienteVIEW = new AlunoVIEW();
-        this.desktopPane.add(clienteVIEW);
-        clienteVIEW.setVisible(true);
-        clienteVIEW.setPosicao();
+    private void abreAlunoVIEW(){
+         AlunoVIEW alunoVIEW = new AlunoVIEW();
+        this.desktopPane.add(alunoVIEW);
+        alunoVIEW.setVisible(true);
+        alunoVIEW.setPosicao();
     }
     
     public static void main(String args[]) {
