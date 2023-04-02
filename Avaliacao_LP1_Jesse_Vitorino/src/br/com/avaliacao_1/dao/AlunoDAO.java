@@ -20,15 +20,14 @@ public class AlunoDTO {
         try {
             ConexaoDAO.ConectDB();
             stmt = ConexaoDAO.con.createStatement();
-            String comando = "Insert into cliente (nome_cli, prontuario_cli, turma_cli, bairro_cli, "
-                    + "cidade_cli, estado_cli, cep_cli, cpf_cli, rg_cli) values ( "
+            String comando = "Insert into cliente (nome_cli, prontuario_cli, turma_cli, curso_cli, "
+                    + "estaluno_cli, data_cli, cep_cli, cpf_cli, rg_cli) values ( "
                     + "'" + cdto.getNomeCli() + "', "
                     + "'" + cdto.getProntuarioCli() + "', "
                     + cdto.getTurmaCli() + ", "
-                    + "'" + cdto.getBairroCli() + "', "
-                    + "'" + cdto.getCidadeCli() + "', "
-                    + "'" + cdto.getEstadoCli() + "', "
-                    + "'" + cdto.getCepCli() + "', "
+                    + "'" + cdto.getCursoCli() + "', "
+                    + "'" + cdto.getEstalunoCli() + "', "
+                    + "'" + cdto.getDataCli() + "', "                    
                     + "'" + cdto.getCpfCli() + "', "
                     + "'" + cdto.getRgCli() + "');";
             //System.out.println(comando);
@@ -52,9 +51,9 @@ public class AlunoDTO {
                     + "nome_cli = '" + cdto.getNomeCli() + "', "
                     + "prontuario_cli = '" + cdto.getProntuarioCli() + "', "
                     + "turma_cli = " + cdto.getTurmaCli() + ", "
-                    + "bairro_cli = '" + cdto.getBairroCli() + "', "
-                    + "cidade_cli = '" + cdto.getCidadeCli() + "', "
-                    + "estado_cli = '" + cdto.getEstadoCli() + "', "
+                    + "curso_cli = '" + cdto.getCursoCli() + "', "
+                    + "estaluno_cli = '" + cdto.getEstalunoCli() + "', "
+                    + "data_cli = '" + cdto.getDataCli() + "', "
                     + "cep_cli = '" + cdto.getCepCli() + "', "
                     + "cpf_cli = '" + cdto.getCpfCli() + "', "
                     + "rg_cli = '" + cdto.getRgCli() + "' where id_cli = " + cdto.getIdCli();
