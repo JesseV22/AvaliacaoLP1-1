@@ -9,7 +9,8 @@ package br.com.avaliacao_1.dto;
  * @author izbel
  */
 public class AlunoDTO {
-    private String nomeCli, prontuarioCli, turmaCli, rgCli;
+
+    private String nomeCli, prontuarioCli, turmaCli, rgCli , cursoCli , cpfCli,dataCli,estalunoCli;
     private int idCli;
 
     public String getNomeCli() {
@@ -24,14 +25,12 @@ public class AlunoDTO {
         return prontuarioCli;
     }
 
-
- 
-    public String getCpfCli() {
-        return turmaCli;
+    public String getEstalunoCli() {
+        return estalunoCli;
     }
 
-    public void setCpfCli(String cpfCli) {
-        this.turmaCli = cpfCli;
+    public void setEstalunoCli(String estalunoCli) {
+        this.estalunoCli = estalunoCli;
     }
 
     public String getRgCli() {
@@ -40,6 +39,37 @@ public class AlunoDTO {
 
     public void setRgCli(String rgCli) {
         this.rgCli = rgCli;
+    }
+
+    public String getCursoCli() {
+        return cursoCli;
+    }
+
+    public void setCursoCli(String cursoCli) {
+        this.cursoCli = cursoCli;
+    }
+     public String getCpfCli() {
+        return cpfCli;
+    }
+
+    public void setCpfCli(String cpfCli) {
+        this.cursoCli = cpfCli;
+    }
+
+    public String getTurmaCli() {
+        return turmaCli;
+    }
+
+    public void setTurmaCli(String turmaCli) {
+        this.turmaCli = turmaCli;
+    }
+
+    public String getDataCli() {
+        return dataCli;
+    }
+
+    public void setDataCli(String dataCli) {
+        this.dataCli = dataCli;
     }
 
     public int getIdCli() {
