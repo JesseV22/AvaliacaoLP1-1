@@ -8,9 +8,9 @@ import java.sql.Statement;
  *
  * @author Aluno
  */
-public class AlunoDTO {
+public class AlunoDAO {
 
-    public AlunoDTO() {
+    public AlunoDAO() {
 
     }
     private ResultSet rs = null;
@@ -20,8 +20,8 @@ public class AlunoDTO {
         try {
             ConexaoDAO.ConectDB();
             stmt = ConexaoDAO.con.createStatement();
-            String comando = "Insert into cliente (nome_cli, prontuario_cli, turma_cli, curso_cli, "
-                    + "estaluno_cli, data_cli, cep_cli, cpf_cli, rg_cli) values ( "
+            String comando = "Insert into aluno (nome_cli, prontuario_cli, turma_cli, curso_cli, "
+                    + "estaluno_cli, data_cli, cpf_cli, rg_cli) values ( "
                     + "'" + cdto.getNomeCli() + "', "
                     + "'" + cdto.getProntuarioCli() + "', "
                     + cdto.getTurmaCli() + ", "
@@ -47,14 +47,13 @@ public class AlunoDTO {
         try {
             ConexaoDAO.ConectDB();
             stmt = ConexaoDAO.con.createStatement();
-            String comando = "update cliente set "
+            String comando = "update aluno set "
                     + "nome_cli = '" + cdto.getNomeCli() + "', "
                     + "prontuario_cli = '" + cdto.getProntuarioCli() + "', "
                     + "turma_cli = " + cdto.getTurmaCli() + ", "
                     + "curso_cli = '" + cdto.getCursoCli() + "', "
                     + "estaluno_cli = '" + cdto.getEstalunoCli() + "', "
-                    + "data_cli = '" + cdto.getDataCli() + "', "
-                    + "cep_cli = '" + cdto.getCepCli() + "', "
+                    + "data_cli = '" + cdto.getDataCli() + "', "                    
                     + "cpf_cli = '" + cdto.getCpfCli() + "', "
                     + "rg_cli = '" + cdto.getRgCli() + "' where id_cli = " + cdto.getIdCli();
             //System.out.println(comando);
@@ -70,7 +69,7 @@ public class AlunoDTO {
         }
     }
 
-    public ResultSet consultarAluno(AlunoDTO clienteDTO, int opcao) {
+    public ResultSet consultarAluno(AlunoDTO alunoDTO, int opcao) {
         try {
             ConexaoDAO.ConectDB();
             stmt = ConexaoDAO.con.createStatement();
@@ -79,17 +78,17 @@ public class AlunoDTO {
             switch (opcao) {
                 case 1:
                     comando = "SELECT c.* "
-                            + "FROM cliente c "
-                            + "WHERE nome_cli LIKE '" + clienteDTO.getNomeCli() + "%' "
+                            + "FROM aluno c "
+                            + "WHERE nome_cli LIKE '" + alunoDTO.getNomeCli() + "%' "
                             + "ORDER BY c.nome_cli";
                     break;
                 case 2:
                     comando = "SELECT c.* "
-                            + "FROM cliente c "
-                            + "WHERE c.id_cli = " + clienteDTO.getIdCli();
+                            + "FROM aluno c "
+                            + "WHERE c.id_cli = " + alunoDTO.getIdCli();
                     break;
                 case 3:
-                    comando = "SELECT c.id_cli, c.nome_cli FROM cliente c ";
+                    comando = "SELECT c.id_cli, c.nome_cli FROM aluno c ";
                     break;
             }
             rs = stmt.executeQuery(comando.toUpperCase());
@@ -103,7 +102,7 @@ public class AlunoDTO {
         try{
             ConexaoDAO.ConectDB();
             stmt = ConexaoDAO.con.createStatement();
-            String comando = "Delete from cliente where id_cli = "
+            String comando = "Delete from aluno where id_cli = "
                     + cdto.getIdCli();
             stmt.execute(comando);
             ConexaoDAO.con.commit();
