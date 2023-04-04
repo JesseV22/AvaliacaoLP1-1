@@ -5,6 +5,11 @@
 package br.com.avaliacao_1.view;
 
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
+import br.com.avaliacao_1.dto.AlunoDTO;
+import br.com.avaliacao_1.ctr.AlunoCTR;
 
 /**
  *
@@ -12,17 +17,21 @@ import java.awt.Dimension;
  */
 public class AlunoVIEW extends javax.swing.JInternalFrame {
 
+    AlunoDTO alunoDTO = new AlunoDTO(); //Cria um objeto alunoDTO
+    AlunoCTR alunoCTR = new AlunoCTR(); //Cria um objeto alunoDTO
+    int gravar_alterar; //*VAriavel usada para saber se esta alterando ou incluindo
     /**
-     * Creates new form ClienteVIEW
+     * Creates new form AlunoVIEW
      */
     public AlunoVIEW() {
         initComponents();
     }
 
-  public void setPosicao() {
-    Dimension d = this.getDesktopPane().getSize();
-    this.setLocation((d.width =  this.getSize().width) /2, (d.height) / 2);
-}
+    public void setPosicao() {
+        Dimension d = this.getDesktopPane().getSize();
+        this.setLocation((d.width = this.getSize().width) / 2, (d.height) / 2);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -303,8 +312,6 @@ public class AlunoVIEW extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-  
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
