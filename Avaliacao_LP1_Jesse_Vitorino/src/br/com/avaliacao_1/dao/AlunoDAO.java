@@ -27,7 +27,7 @@ public class AlunoDAO {
                     + cdto.getTurmaCli() + ", "
                     + "'" + cdto.getCursoCli() + "', "
                     + "'" + cdto.getEstalunoCli() + "', "
-                    + "'" + cdto.getDataCli() + "', "                    
+                    + "'" + cdto.getDataCli() + "', "
                     + "'" + cdto.getCpfCli() + "', "
                     + "'" + cdto.getRgCli() + "');";
             //System.out.println(comando);
@@ -53,7 +53,7 @@ public class AlunoDAO {
                     + "turma_cli = " + cdto.getTurmaCli() + ", "
                     + "curso_cli = '" + cdto.getCursoCli() + "', "
                     + "estaluno_cli = '" + cdto.getEstalunoCli() + "', "
-                    + "data_cli = '" + cdto.getDataCli() + "', "                    
+                    + "data_cli = '" + cdto.getDataCli() + "', "
                     + "cpf_cli = '" + cdto.getCpfCli() + "', "
                     + "rg_cli = '" + cdto.getRgCli() + "' where id_cli = " + cdto.getIdCli();
             //System.out.println(comando);
@@ -98,22 +98,30 @@ public class AlunoDAO {
             return rs;
         }
     }
-    public boolean excluirAluno(AlunoDTO cdto){
-        try{
+
+    public boolean excluirAluno(AlunoDTO cdto) {
+        try {
             ConexaoDAO.ConectDB();
             stmt = ConexaoDAO.con.createStatement();
             String comando = "Delete from aluno where id_cli = "
                     + cdto.getIdCli();
+            //Executa o comando SQL no banco de Dados
             stmt.execute(comando);
+            //Da um commit no banco de dados
             ConexaoDAO.con.commit();
+            //Fechar o statement
             stmt.close();
             return true;
-        }catch(Exception e){
+        } /**Caso tenha algun erro no codigo acima é enviado uma mensagem no
+         * console com o que esta acontecendo.
+         */
+        
+        catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
             return false;
-        }
+        } //Independente de dar erro ou não ele vai fechar o banco de dados.
         finally {
             ConexaoDAO.CloseDB();
         }
-    }
-}
+    }//Fecha o metodo  da classe  ConexãoDao para fechar o banco de dados
+}//fechar classe AlunoDAO

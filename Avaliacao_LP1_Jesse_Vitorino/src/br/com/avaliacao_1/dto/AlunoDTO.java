@@ -24,6 +24,9 @@ public class AlunoDTO {
     public String getProntuarioCli() {
         return prontuarioCli;
     }
+    public void setProntuarioCli(String prontuarioCli) {
+        this.prontuarioCli = prontuarioCli;
+    }
 
     public String getEstalunoCli() {
         return estalunoCli;
